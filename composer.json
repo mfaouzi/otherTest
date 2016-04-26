@@ -1,0 +1,25 @@
+{
+    "name": "aliznet/akeneo-websphere-connector",
+    "type": "symfony-bundle",
+    "description": "The Websphere Commerce Connector for Akeneo",
+    "keywords": ["wcs", "akeneo", "pim", "aliznet"],
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Aliznet",
+            "homepage": "http://www.aliznet.fr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.4",
+        "symfony/framework-bundle": "~2.7",
+        "twig/twig": "*",
+        "doctrine/doctrine-bundle": "*"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Aliznet\\" : ""
+        }
+    }
+}
