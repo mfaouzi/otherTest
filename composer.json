@@ -1,5 +1,5 @@
 {
-    "name": "aliznet/other-test",
+    "name": "aliznettest/other-test",
     "type": "symfony-bundle",
     "description": "The Websphere Commerce Connector for Akeneo",
     "keywords": ["wcs", "akeneo", "pim", "aliznet"],
