@@ -10,7 +10,7 @@
             "homepage": "http://www.aliznet.fr"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.4",
         "symfony/framework-bundle": "~2.7",
