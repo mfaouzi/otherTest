@@ -16,7 +16,6 @@
         "twig/twig": "*",
         "doctrine/doctrine-bundle": "*"  
     },
-    "minimum-stability": "stable",
     "autoload": {
         "psr-4" : {
             "Aliznet\\" : ""
