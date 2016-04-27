@@ -11,12 +11,20 @@
         }
     ],
     "require": {
-        
+        "php": ">=5.4.4",
+        "symfony/framework-bundle": "~2.7",
+        "twig/twig": "*",
+        "doctrine/doctrine-bundle": "*"  
     },
     "minimum-stability": "stable",
     "autoload": {
         "psr-4" : {
             "Aliznet\\" : ""
         }
-    }
+    },
+    "extra": {
+-         "branch-alias": {
+-            "dev-master": "1.6.x-dev"
+-         }
+-     }
 }
