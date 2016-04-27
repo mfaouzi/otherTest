@@ -11,10 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4.4",
-        "symfony/framework-bundle": "~2.7",
-        "twig/twig": "*",
-        "doctrine/doctrine-bundle": "*"
+        
     },
     "minimum-stability": "stable",
     "autoload": {
