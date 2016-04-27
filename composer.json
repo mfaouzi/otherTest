@@ -11,6 +11,7 @@
         }
     ],
     "require": {
+    	"akeneo/pim-community-dev": "1.5.*",
         "php": ">=5.4.4",
         "symfony/framework-bundle": "~2.7",
         "twig/twig": "*",
