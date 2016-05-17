@@ -1,0 +1,20 @@
+type;code;label-de_DE;label-en_US;label-fr_FR;group;unique;useable_as_grid_filter;allowed_extensions;metric_family;default_metric_unit;reference_data_name;localizable;scopable
+pim_catalog_textarea;description;Beschreibung;Description;Description;General;0;1;;;;;1;1
+pim_catalog_price_collection;price;Preis;Price;Prix;Pricing;0;1;;;;;0;0
+pim_catalog_textarea;short_description;Kurze Beschreibung;Short description;Description courte;General;0;1;;;;;1;1
+pim_catalog_text;Field4;Feld4;Field4;Champ4;Custom;0;0;;;;;0;0
+pim_catalog_number;Field1;Feld1;Field1;Champ1;Custom;0;0;;;;;0;0
+pim_catalog_number;Field2;Feld2;Field2;Champ2;Custom;0;0;;;;;0;0
+pim_catalog_number;Field3;Filed3;Filed3;Champ3;Custom;0;0;;;;;0;0
+pim_catalog_text;Field5;Feld5;Field5;Champ5;Custom;0;0;;;;;0;0
+pim_catalog_boolean;ForPurchase;Zum Verkauf;For purchase;Proposer «ˇ l'achat;Publishing;0;0;;;;;0;0
+pim_catalog_text;Style;Stil;Style;Style;Descriptif;0;0;;;;;0;0
+pim_catalog_text;Age;Alter;Age;Age;Descriptif;0;0;;;;;0;0
+pim_catalog_simpleselect;W_Clothing_Size;Kleidergr«Ù«?e;Clothing size;Taille de v«¶tements;Defining;0;0;;;;;0;0
+pim_catalog_simpleselect;W_Shoe_Size;Schuhgr«Ù«?e;Shoes size;Pointure;Defining;0;0;;;;;0;0
+pim_catalog_simpleselect;W_Color;Farbe;Color;Couleur;Defining;0;0;;;;;0;0
+pim_catalog_text;Keyword;Stichwort;Keyword;Mot cl«∏;General;0;0;;;;;0;0
+pim_catalog_boolean;Display_To_Customer;Anzeige nach Kundenwunsch;Display to customer;Afficher au client;Display;0;0;;;;;0;0
+pim_catalog_text;image_thumbnail;thumbnail image;Thumbnail;Image miniature;Display;0;0;;;;;0;0
+pim_catalog_text;image_Full;Bild in voller Gr«Ù«?e;Full image;Image taille r«∏elle;Display;0;0;;;;;0;0
+pim_catalog_price_collection;ListPrice;Katalogpreis;Catalogue price;Prix de catalogue;Pricing;0;0;;;;;0;0

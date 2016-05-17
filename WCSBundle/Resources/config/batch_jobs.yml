@@ -1,0 +1,117 @@
+connector:
+    name: ALIZNET WCS Connector
+    jobs:
+        ## Export Products && Items.
+        wcs_products_export:
+            title: aliznet_wcs_export.jobs.wcs_products_export.title
+            type:  export
+            steps:
+                ## Export Products.       
+                wcs_product_export:
+                    title: aliznet_wcs_export.jobs.wcs_product_export.title
+                    services:
+                        reader:    pim_base_connector.reader.repository.variant_group
+                        processor: aliznet_wcs_export.processor.product
+                        writer:    aliznet_wcs.writer.file.product_item
+                ## Export Items.
+                wcs_items_export:
+                    title: aliznet_wcs_export.jobs.wcs_items_export.title
+                    services:
+                        reader:    aliznet_wcs.reader.doctrine.item
+                        processor: aliznet_wcs.processor.item
+                        writer:    aliznet_wcs.writer.file.product_item
+                ## Export products with prices in columns.
+                wcs_product_price_export:
+                    title: aliznet_wcs_export.jobs.wcs_product_price_export.title
+                    services:
+                        reader:    aliznet_wcs.reader.repository.variant_group
+                        processor: aliznet_wcs.processor.wcs_productprice_export
+                        writer:    aliznet_wcs.writer.file.wcs_productprice_export
+                ## Export Items with prices in columns.
+                wcs_items_prices_export:
+                    title: aliznet_wcs_export.jobs.wcs_items_prices_export.title
+                    services:
+                        reader:    aliznet_wcs.reader.doctrine.item
+                        processor: aliznet_wcs.processor.items_prices
+                        writer:    aliznet_wcs.writer.file.wcs_productprice_export
+                                 
+        ## Export Attributes && Attributes values.
+        wcs_attributes_export:
+            title: aliznet_wcs_export.jobs.wcs_attributes_export.title
+            type:  export
+            steps:    
+                ## Export Attribute.
+                wcs_attribute_export:
+                    title:     aliznet_wcs_export.jobs.wcs_attribute_export.export.title
+                    services:
+                        reader:    aliznet_wcs.reader.orm.attribute
+                        processor: aliznet_wcs.processor.attribute
+                        writer:    aliznet_wcs.writer.file.attribute.csv
+                ## Export Attribute values.              
+                wcs_attribute_values_export_language:
+                    title: aliznet_wcs_export.jobs.wcs_attribute_values_export_language.title
+                    services:
+                        reader:    aliznet_wcs.reader.orm.attribute_values
+                        processor: aliznet_wcs.processor.attribute_values_language
+                        writer:    aliznet_wcs.writer.file.attribute_values_language.csv
+                ## Export Attribute values.              
+                wcs_attribute_values_export:
+                    title: aliznet_wcs_export.jobs.wcs_attribute_values_export.title
+                    services:
+                        reader:    aliznet_wcs.reader.orm.attribute
+                        processor: aliznet_wcs.processor.attribute_values
+                        writer:    aliznet_wcs.writer.file.attribute_values.csv
+                        
+        ## Export Categories with there translation values.  .    
+        wcs_categories_export:
+            title: aliznet_wcs_export.jobs.wcs_categories_export.title
+            type:  export
+            steps:
+                export_category:
+                    title:     aliznet_wcs_export.jobs.wcs_category_export.title
+                    services:
+                        reader:    aliznet_wcs.reader.orm.category
+                        processor: aliznet_wcs.processor.category
+                        writer:    aliznet_wcs.writer.file.category.csv
+                export_category_translation:
+                    title:     aliznet_wcs_export.jobs.wcs_category_translation_export.title
+                    services:
+                        reader:    aliznet_wcs.reader.orm.category
+                        processor: aliznet_wcs.processor.category.multiLang
+                        writer:    aliznet_wcs.writer.file.category.trans.csv
+                        
+        ## Export Products and there associated attributes and values.
+        wcs_item_attribute_values_export:
+            title: aliznet_wcs_export.jobs.wcs_item_attribute_values_export.title
+            type:  export
+            steps:
+                ## Export Products and there associated definition attributes and values.
+                export_definition_attribute:
+                    title:     aliznet_wcs_export.jobs.wcs_item_def_attribute_values_export.export.title
+                    services:
+                        reader:    aliznet_wcs.reader.doctrine.item
+                        processor: aliznet_wcs.processor.def_item_attribute_value
+                        writer:    aliznet_wcs.writer.file.def.attribute.csv
+                ## Export Products and there associated descriptive attributes and values.
+                export_descriptive_attribute:
+                    title:     aliznet_wcs_export.jobs.wcs_item_desc_attribute_values_export.export.title
+                    services:
+                        reader:    aliznet_wcs.reader.doctrine.item
+                        processor: aliznet_wcs.processor.desc_item_attribute_value
+                        writer:    aliznet_wcs.writer.file.desc.attribute.csv
+                ## Export Products and there associated definition attributes (values and translations).
+                export_definition_translation_attribute:
+                    title:     aliznet_wcs_export.jobs.wcs_item_def_trans_attribute_values_export.export.title
+                    services:
+                        reader:    aliznet_wcs.reader.doctrine.item
+                        processor: aliznet_wcs.processor.def_item_attribute_trans_value
+                        writer:    aliznet_wcs.writer.file.def.trans.attribute.csv
+                ## Export Products and there associated descriptive attributes (values and translations).
+                export_descriptive_translation_attribute:
+                    title:     aliznet_wcs_export.jobs.wcs_item_desc_trans_attribute_values_export.export.title
+                    services:
+                        reader:    aliznet_wcs.reader.doctrine.item
+                        processor: aliznet_wcs.processor.desc_item_attribute_trans_value
+                        writer:    aliznet_wcs.writer.file.desc.trans.attribute.csv
+        
+      

@@ -1,0 +1,7 @@
+ListPrice=>ListPrice
+price=>price
+Name=>name
+short_description=>description
+Description=>short_description
+Thunmbail=>image_thumbnail
+FullImage=>image_Full

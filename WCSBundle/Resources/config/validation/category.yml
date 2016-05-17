@@ -1,0 +1,8 @@
+# /src/Aliznet/WCSBundle/Resources/config/validation/category.yml
+Aliznet\WCSBundle\Entity\Category:
+    properties:
+            code:
+                - NotBlank: ~
+                - Regex:
+                    pattern: /^[a-zA-Z0-9_]+$/
+                    message: Category code may contain only letters, numbers and underscores

@@ -1,0 +1,20 @@
+# /src/Aliznet/WCSBundle/Resources/config/doctrine/CategoryTranslation.orm.yml
+Aliznet\WCSBundle\Entity\CategoryTranslation:
+    type: entity
+    table: pim_catalog_category_translation
+    fields:
+        description:
+            type: string
+            length: 255
+            nullable: true
+        longDescription:
+            type: string
+            length: 255
+            nullable: true
+        keyword:
+            type: string
+            length: 255
+            nullable: true
+            
+ 
+

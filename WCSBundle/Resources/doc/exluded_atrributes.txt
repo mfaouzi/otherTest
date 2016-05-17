@@ -1,0 +1,16 @@
+sku
+name
+description
+short_description
+Display_To_Customer
+image_Full
+image_thumbnail
+price
+ListPrice
+Keyword
+ForPurchase
+Field1
+Field2
+Field3
+Field4
+Field5

@@ -1,0 +1,95 @@
+aliznet_wcs_export:
+    ## Job titles
+    jobs:
+        ## products export
+        wcs_products_export:
+            title: WCS Products (products and items) export 
+            export.title: Products export
+        wcs_product_export:
+            title: WCS product export
+            export.title: Product export 
+        wcs_items_export:
+            title: WCS Items export
+            export.title: Items export
+        wcs_product_price_export:
+            title: WCS product export with prices in columns.
+            export.title: Product export with prices in columns.
+        wcs_items_prices_export:
+            title: WCS Items export with prices in columns.
+            export.title: Items export with prices in columns.
+        ## attributes export
+        wcs_attributes_export:
+            title: WCS attributes && attributes values export (with language)
+            export.title: Attributes && attributes values (with language) export
+        wcs_attribute_export:
+            title: WCS attributes export
+            export.title: Attributes export
+        wcs_attribute_values_export_language:
+            title: WCS attributes values with Language export
+            export.title: Attributes values  with Language export
+        wcs_attribute_values_export:
+            title: WCS attributes values export
+            export.title: Attributes values export
+        ## category export
+        wcs_categories_export:
+            title: WCS Category and category translation export 
+            export.title: Category and category translation export
+        wcs_category_export:
+            title: WCS Category export 
+            export.title: Category export
+        wcs_category_translation_export:
+            title: WCS Category translation export
+            export.title: Category translation export
+        ## items and attributes export
+        wcs_item_attribute_values_export:
+            title: WCS items with attributes and values (with language) 
+            export.title: Items with attributes and values (with language)
+        wcs_item_def_attribute_values_export:
+            title: WCS items and there associated definition attributes and values (with language)
+            export.title: Items and there associated attributes and values (with language)
+        wcs_item_desc_attribute_values_export:
+             title: WCS products and there associated descriptive attributes and values (with language)
+             export.title: Products and there associated attributes of description and values (with language)
+        wcs_item_def_trans_attribute_values_export:
+             title: WCS products and there associated definition attributes and translated values
+             export.title: Products and there associated definition attributes and translated values
+        wcs_item_desc_trans_attribute_values_export:
+            title: WCS items and there associated descriptive attributes and translated values
+            export.title: Items and there associated attributes and translated values
+                  
+    ## Import/export configuration fields (for readers, processors, writers)
+    export:
+        Attributes:
+            label:  attributes
+            help: Code of attributes separated by comas (example picture,color)
+        includeexclude:
+            label: Excluded or Included attributes
+            help: Choose if you want to exclude or include the attributes in the below field.
+        language:
+            label: Language
+            help: Code language to export (example en_US, fr_FR)
+        excludedCategories:
+            label: Excluded root categories
+            help: Root categories codes to exclude (separated by comas, it will also exclude its children) 
+        isEnabled:
+            label: Products status
+            help: Yes for enabled / No for disabled
+        isComplete:
+            label: Products completness
+            help: Yes for complete product / No for uncomplete product
+        exportFrom:
+            label: Last product modification date
+            help: date format YYYY-MM-DD h:m:s 
+        directoryPath:
+            label: File directory
+            help: Where to write the generated file on the file system (example /tmp/export/)  
+        exportImages:
+            label: Export Images
+            help: Do we also export the images of the products
+
+
+pane.accordion:
+    nameTrans: Name values
+    descriptionTrans: Description values
+    longDescriptionTrans: Long description values
+    keywordTrans: Keyword values
