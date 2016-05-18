@@ -85,9 +85,9 @@ class ProductProcessor extends AbstractConfigurableStepElement implements ItemPr
                     $data['product'][$i]['PartNumber'] = $codeProduct;
                     $data['product'][$i]['Type'] = 'PRODUCT';
                     $data['product'][$i]['ParentPartNumber'] = '';
-                    $data['product'][$i]['Sequence'] = '1';
+                    $data['product'][$i]['Sequence'] = '0';
                     $data['product'][$i]['ParentGroupIdentifier'] = (empty($categories)) ? '' : $categories[0];
-                    $data['product'][$i]['Currency'] = $currency;
+                    $data['product'][$i]['CurrencyCode'] = $currency;
 
                     $filename = 'products_atrributes.txt';
                     $dir = (dirname(dirname(__FILE__)));

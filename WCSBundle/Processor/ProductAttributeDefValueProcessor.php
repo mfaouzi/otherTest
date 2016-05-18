@@ -52,13 +52,13 @@ class ProductAttributeDefValueProcessor extends ProcessorHelper implements ItemP
                 if (!empty($options)) {
                     $options->setLocale($this->getLanguage());
                     $attrCode = $value->getAttribute()->getCode();
-                    $attrValue = $options->getOptionValue()->getValue();
+                    $attrValue = $options->getCode();
                 }
             }
             if (!empty($productName) && !empty($attrCode) && !empty($attrValue)) {
                 $data['product'][$i]['PartNumber'] = $productName;
                 $data['product'][$i]['Name'] = $attrCode;
-                $data['product'][$i]['value'] = $attrValue;
+                $data['product'][$i]['Value'] = $attrValue;
                 $data['product'][$i]['delete'] = '0';
                 ++$i;
             }

@@ -25,7 +25,7 @@ class Constants
     const wcs_category_export = 'CatalogGroups.csv';
     const wcs_category_translation_export = 'CatalogGroupWithTwoLanguageDescriptions.csv';
     const wcs_item_def_attribute_values_export = 'ProductDefiningAttributeValue.csv';
-    const wcs_item_def_trans_attribute_values_export = 'ProductDefiningAttributeTrans.csv';
+    const wcs_item_def_trans_attribute_values_export = 'ProductDefiningAttributeAndAllowedValues.csv';
     const wcs_item_desc_attribute_values_export = 'CatalogEntryDescriptiveAttributeAndValue.csv';
     const wcs_item_desc_trans_attribute_values_export = 'CatalogEntryDescriptiveAttributeAndValueTrans.csv';
 

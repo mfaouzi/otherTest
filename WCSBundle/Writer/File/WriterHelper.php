@@ -268,13 +268,17 @@ class WriterHelper extends BaseFileWriter
      */
     public function getPath()
     {
-        $step_title = $this->stepExecution->getStepName();
-        $job_title = explode('.', $step_title);
-        $variable = constant('Aliznet\WCSBundle\Resources\Constant\Constants::'.$job_title[2]);
-        if ('/' != substr($this->directoryPath, -1)) {
-            $this->directoryPath = $this->directoryPath.'/';
-        }
+        if($this->stepExecution != null){
+            $step_title = $this->stepExecution->getStepName();
+            $job_title = explode('.', $step_title);
+            $variable = constant('Aliznet\WCSBundle\Resources\Constant\Constants::'.$job_title[2]);
+            if ('/' != substr($this->directoryPath, -1)) {
+                $this->directoryPath = $this->directoryPath.'/';
+            }
 
-        return $this->directoryPath.$variable;
+            return $this->directoryPath.$variable;
+       }
+       else
+           return null;
     }
 }

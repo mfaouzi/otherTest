@@ -103,7 +103,7 @@ connector:
                 export_definition_translation_attribute:
                     title:     aliznet_wcs_export.jobs.wcs_item_def_trans_attribute_values_export.export.title
                     services:
-                        reader:    aliznet_wcs.reader.doctrine.item
+                        reader:    aliznet_wcs.reader.repository.variant_group
                         processor: aliznet_wcs.processor.def_item_attribute_trans_value
                         writer:    aliznet_wcs.writer.file.def.trans.attribute.csv
                 ## Export Products and there associated descriptive attributes (values and translations).

@@ -55,36 +55,35 @@ class ProductAttributeDefTransValueProcessor extends ProcessorHelper implements 
      */
     public function process($product)
     {
-        parent::process($product);
         $data['product'] = [];
-
         return $this->fillProductData($product, $data);
     }
 
-    protected function fillProductData($product, $data)
+    protected function fillProductData($item, $data)
     {
-        $i = 0;
-        foreach ($product->getValues() as $value) {
-            $productName = $product->getValue('sku')->getProduct()->getLabel();
-            $attrCode = '';
-            $options = $value->getOption();
-            if (count($options) > 0) {
-                if (!empty($productName) && !empty($options)) {
-                    $data['product'][$i]['PartNumber'] = $productName;
-                    $data['product'][$i]['Type'] = $this->processattributeType($options->getAttribute()->getAttributeType());
-                    foreach ($this->getLanguages() as $language) {
-                        $translation = $options->getAttribute()->setLocale($language);
-                        $attrCode = $translation->getLabel();
-                        $languagePrefix = explode('_', $language)[0];
-                        $data['product'][$i][$this->localeHelper->getLocaleLabel($languagePrefix, 'en_US').'Name'] = $attrCode;
-                        $data['product'][$i][$this->localeHelper->getLocaleLabel($languagePrefix, 'en_US').'Sequence'] = '0';
-                    }
-                    $data['product'][$i]['delete'] = '0';
-                    ++$i;
-                }
+        // Set Language of translation:
+        $item->setLocale($this->getLanguage());
+        $data['product'] = [];
+        $index = 0;
+        
+        foreach ($item->getAxisAttributes() as $attribute)
+        {
+            $attribute->setLocale($this->getLanguage());
+            $data['product'][$index]['PartNumber'] = $item->getCode();
+            $data['product'][$index]['Type'] = $this->processattributeType($attribute->getAttributeType());
+            $data['product'][$index]['Name'] = $attribute->getCode();
+            $data['product'][$index]['Sequence'] = $i+1;
+            $j = 0;
+            foreach ($attribute->getOptions() as $option)
+            {
+                $data['product'][$index]['AllowedValue'.($j+1)] = $option->getCode();
+                $j++;
             }
+            $data['product'][$i]['Delete'] = 0;
+            $index ++;
         }
 
+        
         return $data['product'];
     }
 }

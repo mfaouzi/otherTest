@@ -1,7 +1,7 @@
 ListPrice=>ListPrice
 price=>price
 Name=>name
-short_description=>description
-Description=>short_description
+ShortDescription=>short_description
+LonDescription=>description
 Thunmbail=>image_thumbnail
 FullImage=>image_Full

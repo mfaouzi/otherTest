@@ -42,7 +42,7 @@ class AttributeValuesProcessor extends ProcessorHelper implements ItemProcessorI
     {
         $result = [];
         $result['Identifier'] = $item->getCode();
-        $result['type'] = $this->processattributeType($item->getAttributeType());
+        $result['Type'] = $this->processattributeType($item->getAttributeType());
         $group = $item->getGroup()->getCode();
         $item_group = '';
         switch ($group) {
@@ -62,16 +62,15 @@ class AttributeValuesProcessor extends ProcessorHelper implements ItemProcessorI
         $result['StoreDisplay'] = '0';
         $result['Comparable'] = '';
         $result['Facetable'] = '';
-        $result['Searchable'] = ($item->isUseableAsGridFilter()) ? 'True' : 'False';
+        $result['Searchable'] = ($item->isUseableAsGridFilter()) ? 'true' : 'false';
         $result['Merchandisable'] = '';
         $result['Name'] = $item->setLocale($this->getLanguage())->getLabel();
         $i = 1;
         foreach ($item->getOptions() as $value) {
             $value->setLocale($this->getLanguage());
-            $result['AllowedValue'.$i] = $value->getOptionValue()->getValue();
+            $result['AllowedValue'.$i] = $value->getCode();
             ++$i;
         }
-        $result['Delete'] = '';
 
         return $result;
     }

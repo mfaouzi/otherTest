@@ -41,7 +41,7 @@ class AttributeProcessor extends ProcessorHelper implements ItemProcessorInterfa
     {
         $result = [];
         $result['Identifier'] = $item->getCode();
-        $result['type'] = $this->processattributeType($item->getAttributeType());
+        $result['Type'] = $this->processattributeType($item->getAttributeType());
         $group = $item->getGroup()->getCode();
         $item_group = '';
         switch ($group) {
@@ -60,7 +60,7 @@ class AttributeProcessor extends ProcessorHelper implements ItemProcessorInterfa
         $result['label_'.$this->getLanguage()] = $item->setLocale($this->getLanguage())->getLabel();
         $result['Sequence'] = 1;
         $result['Displayable'] = 'True';
-        $result['Searchable'] = ($item->isUseableAsGridFilter()) ? 'True' : 'False';
+        $result['Searchable'] = ($item->isUseableAsGridFilter()) ? 'true' : 'false';
         $result['Comparable'] = '';
         $result['StoreDisplay'] = '1';
         $result['Delete'] = '';
